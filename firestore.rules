@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Marcas: Public read & write
+    match /marcas/{brandId} {
+      allow read, write: if true;
+    }
+
+    // Productos: Public read & write for store catalog, seed & inventory management
+    match /productos/{productId} {
+      allow read, write: if true;
+    }
+
+    // Ventas: Public read & write for sales records and purchases
+    match /ventas/{saleId} {
+      allow read, write: if true;
+    }
+
+    // Tendencias por Estado en Venezuela
+    match /tendencias_estado/{tendenciaId} {
+      allow read, write: if true;
+    }
+  }
+}

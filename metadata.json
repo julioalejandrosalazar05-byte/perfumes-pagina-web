@@ -1,0 +1,6 @@
+{
+  "name": "Lumière Parfums",
+  "description": "Nuevas fragancias de edición limitada - Lumière Parfums. Perfumes de nicho, elíxires y notas exclusivas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

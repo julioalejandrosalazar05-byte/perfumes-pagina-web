@@ -1,0 +1,153 @@
+{
+  "entities": {
+    "Brand": {
+      "title": "Brand",
+      "description": "Perfume brand entity",
+      "type": "object",
+      "properties": {
+        "nombre_marca": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nombre_marca"
+      ]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Perfume product item with inventory and scent notes",
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string"
+        },
+        "marca_id": {
+          "type": "string"
+        },
+        "nombre_marca": {
+          "type": "string"
+        },
+        "linea": {
+          "type": "string"
+        },
+        "categoria_genero": {
+          "type": "string",
+          "enum": [
+            "Hombre",
+            "Mujer",
+            "Unisex"
+          ]
+        },
+        "tipo_origen": {
+          "type": "string",
+          "enum": [
+            "Árabe / Nicho",
+            "Diseñador"
+          ]
+        },
+        "concentracion": {
+          "type": "string"
+        },
+        "capacidad_ml": {
+          "type": "number"
+        },
+        "precio_venta": {
+          "type": "number"
+        },
+        "activo": {
+          "type": "boolean"
+        },
+        "stock_actual": {
+          "type": "number"
+        },
+        "stock_minimo": {
+          "type": "number"
+        },
+        "familia_olfativa": {
+          "type": "string"
+        },
+        "notas_salida": {
+          "type": "string"
+        },
+        "notas_corazon": {
+          "type": "string"
+        },
+        "notas_fondo": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "hoverImage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nombre",
+        "nombre_marca",
+        "categoria_genero",
+        "tipo_origen",
+        "concentracion",
+        "precio_venta"
+      ]
+    },
+    "Sale": {
+      "title": "Sale",
+      "description": "Customer order and sale transaction",
+      "type": "object",
+      "properties": {
+        "cliente_id": {
+          "type": "string"
+        },
+        "estado_venezuela": {
+          "type": "string"
+        },
+        "fecha_venta": {
+          "type": "string"
+        },
+        "total": {
+          "type": "number"
+        },
+        "estado_pedido": {
+          "type": "string",
+          "enum": [
+            "Pendiente",
+            "Pagado",
+            "Enviado",
+            "Entregado",
+            "Cancelado"
+          ]
+        },
+        "metodo_pago": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cliente_id",
+        "estado_venezuela",
+        "total",
+        "metodo_pago"
+      ]
+    }
+  },
+  "firestore": {
+    "/marcas/{brandId}": {
+      "schema": {
+        "$ref": "#/entities/Brand"
+      },
+      "description": "Perfume brands list"
+    },
+    "/productos/{productId}": {
+      "schema": {
+        "$ref": "#/entities/Product"
+      },
+      "description": "Perfume catalog items with pricing and stock"
+    },
+    "/ventas/{saleId}": {
+      "schema": {
+        "$ref": "#/entities/Sale"
+      },
+      "description": "Sales and customer orders"
+    }
+  }
+}
