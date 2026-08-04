@@ -13,6 +13,7 @@ interface NavbarProps {
   searchQuery: string;
   setSearchQuery: (q: string) => void;
   onOpenSearch: () => void;
+  onOpenStockManager?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -23,6 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenCart,
   onOpenWishlist,
   onOpenSearch,
+  onOpenStockManager,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -116,6 +118,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </span>
                 )}
               </button>
+
+              {/* Admin Database & Stock Button */}
+              {onOpenStockManager && (
+                <button
+                  onClick={onOpenStockManager}
+                  id="open-admin-btn"
+                  className="p-2.5 rounded-full text-white/80 hover:text-[#D4AF37] hover:bg-white/10 transition-colors relative focus:outline-none"
+                  title="Gestor de Inventario y Base de Datos (Admin)"
+                >
+                  <Database className="w-5 h-5" />
+                </button>
+              )}
 
               {/* Cart Button */}
               <button

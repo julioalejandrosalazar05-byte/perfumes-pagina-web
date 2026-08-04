@@ -185,15 +185,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin, onSelectTab }) => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/50">
           <div className="flex items-center gap-3">
             <p>Copyright © 2026 LUMIÈRE PARFUMS VENEZUELA. Todos los derechos reservados.</p>
-            {onOpenAdmin && (
-              <button
-                onClick={onOpenAdmin}
-                className="text-white/30 hover:text-[#D4AF37] transition-colors underline decoration-dashed text-[10px]"
-                title="Acceso Administración y Base de Datos del Servidor"
-              >
-                [ Acceso Administración BD ]
-              </button>
-            )}
           </div>
           <div className="flex items-center gap-3">
             <span className="bg-white/10 px-2.5 py-1 rounded text-white font-mono">PagoMóvil Bs.</span>
