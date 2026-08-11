@@ -139,3 +139,22 @@ export async function recordSaleInFirestore(saleData: any): Promise<string> {
     return '';
   }
 }
+
+// Fetch sales from Firestore for the dashboard
+export async function getSalesFromFirestore(): Promise<any[]> {
+  try {
+    const colRef = collection(db, 'ventas');
+    const snapshot = await getDocs(colRef);
+    if (snapshot.empty) {
+      return [];
+    }
+    const sales: any[] = [];
+    snapshot.forEach((d) => {
+      sales.push({ id: d.id, ...d.data() });
+    });
+    return sales;
+  } catch (error) {
+    handleFirestoreError(error, OperationType.LIST, 'ventas');
+    return [];
+  }
+}

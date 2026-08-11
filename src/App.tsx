@@ -29,6 +29,12 @@ export default function App() {
   const [isAdminRoute, setIsAdminRoute] = useState(false);
   const [user, setUser] = useState<User | null>(null);
 
+  const ADMIN_EMAILS = [
+    'julioalejandrosalazar05@gmail.com',
+    'vicentemontano59@gmail.com'
+  ];
+  const isAuthorizedAdmin = user && user.email && ADMIN_EMAILS.includes(user.email);
+
   useEffect(() => {
     // Check if we are on the admin route
     if (window.location.pathname === '/admin' || window.location.search.includes('admin=true')) {
@@ -329,10 +335,12 @@ export default function App() {
   const totalCartItemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   if (isAdminRoute) {
-    if (user) {
+    if (isAuthorizedAdmin) {
       return <AdminDashboard />;
     }
-    return <AdminLogin />;
+    // If there's a user but they aren't authorized, we still show the login but with a prop or just let AdminLogin handle it.
+    // Let's pass the user to AdminLogin so it can show "Access Denied" and a logout button.
+    return <AdminLogin user={user} />;
   }
 
   return (
