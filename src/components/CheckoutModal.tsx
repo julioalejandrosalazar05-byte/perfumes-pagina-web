@@ -406,10 +406,15 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 </div>
               )}
 
-              {/* Guarantee */}
-              <div className="flex items-center gap-2 text-xs text-white/50 justify-center">
-                <Lock className="w-4 h-4 text-[#D4AF37]" />
-                <span>Pago y entrega garantizada con sello de autenticidad Lumière</span>
+              {/* Guarantee and Legal Disclaimer */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-[10px] text-white/50 justify-center text-center px-4">
+                  <Lock className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                  <span>Pago y entrega garantizada con sello de autenticidad Lumière</span>
+                </div>
+                <div className="bg-amber-900/20 border border-amber-500/20 p-3 rounded-xl text-[10px] text-white/70 text-center leading-relaxed">
+                  <strong>Nota Legal (Providencia SENIAT):</strong> Este documento electrónico representa una <strong>Orden de Compra / Toma de Pedido</strong>. La factura fiscal definitiva y legal será emitida a través de nuestro sistema homologado y entregada junto con su pedido o vía correo electrónico una vez confirmado el pago.
+                </div>
               </div>
 
               {/* Action Buttons */}
@@ -449,7 +454,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   ¡Gracias por tu compra, {completedOrder.customerName}!
                 </h3>
                 <p className="text-xs text-white/60 mt-1">
-                  Hemos enviado la confirmación y la factura formal a <strong className="text-white">{completedOrder.email}</strong>.
+                  Hemos enviado la confirmación y la orden de compra a <strong className="text-white">{completedOrder.email}</strong>.
                 </p>
               </div>
 

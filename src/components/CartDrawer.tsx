@@ -254,14 +254,19 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               </div>
 
               {/* Checkout Button */}
-              <button
-                onClick={() => onProceedToCheckout(appliedPromo ? appliedPromo.percent : 0)}
-                id="proceed-to-checkout-btn"
-                className="w-full py-4 rounded-xl bg-[#D4AF37] hover:bg-[#e5be48] text-black font-extrabold text-xs uppercase tracking-[0.2em] transition-all shadow-lg flex items-center justify-center gap-2"
-              >
-                <span>Proceder al Pago — {formatPrice(finalTotal, finalTotalBs)}</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              <div className="space-y-3">
+                <button
+                  onClick={() => onProceedToCheckout(appliedPromo ? appliedPromo.percent : 0)}
+                  id="proceed-to-checkout-btn"
+                  className="w-full py-4 rounded-xl bg-[#D4AF37] hover:bg-[#e5be48] text-black font-extrabold text-xs uppercase tracking-[0.2em] transition-all shadow-lg flex items-center justify-center gap-2"
+                >
+                  <span>Generar Orden — {formatPrice(finalTotal, finalTotalBs)}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <p className="text-[9px] text-white/40 text-center leading-tight">
+                  Al continuar, generarás una Orden de Compra (Toma de Pedido). La Factura Fiscal definitiva será emitida con la entrega según providencias del SENIAT.
+                </p>
+              </div>
 
             </div>
           )}
