@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Perfume } from '../types';
 import { signOut } from 'firebase/auth';
-import { auth, getPerfumesFromFirestore, deletePerfumeFromFirestore, getSalesFromFirestore } from '../lib/firebase';
-import { LogOut, Package, ShoppingBag, Plus, Edit2, Trash2, TrendingUp, Users, DollarSign, Activity } from 'lucide-react';
+import { auth, getPerfumesFromFirestore, deletePerfumeFromFirestore, getSalesFromFirestore, addPerfumeToFirestore, updatePerfumeInFirestore } from '../lib/firebase';
+import { LogOut, Package, ShoppingBag, Plus, Edit2, Trash2, TrendingUp, Users, DollarSign, Activity, X } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 export function AdminDashboard() {
@@ -10,6 +10,25 @@ export function AdminDashboard() {
   const [perfumes, setPerfumes] = useState<Perfume[]>([]);
   const [sales, setSales] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Modal State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingPerfume, setEditingPerfume] = useState<Perfume | null>(null);
+  
+  // Form State
+  const [formTab, setFormTab] = useState<'basic' | 'advanced'>('basic');
+  const [formData, setFormData] = useState({
+    name: '',
+    brand: '',
+    price: 0,
+    size: '100ml',
+    image: '',
+    gender: 'Mujer',
+    description: '',
+    family: 'Todas',
+    concentration: 'Eau de Parfum'
+  });
+  const [formLoading, setFormLoading] = useState(false);
 
   useEffect(() => {
     loadData();
@@ -38,17 +57,99 @@ export function AdminDashboard() {
     }
   };
 
+  const openNewPerfumeModal = () => {
+    setEditingPerfume(null);
+    setFormData({
+      name: '',
+      brand: '',
+      price: 0,
+      size: '100ml',
+      image: '',
+      gender: 'Mujer',
+      description: '',
+      family: 'Todas',
+      concentration: 'Eau de Parfum'
+    });
+    setFormTab('basic');
+    setIsModalOpen(true);
+  };
+
+  const openEditPerfumeModal = (p: Perfume) => {
+    setEditingPerfume(p);
+    setFormData({
+      name: p.name,
+      brand: p.brand,
+      price: p.price,
+      size: p.defaultSize,
+      image: p.image,
+      gender: p.gender as any,
+      description: p.description,
+      family: p.family as any,
+      concentration: p.concentration as any
+    });
+    setFormTab('basic');
+    setIsModalOpen(true);
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormLoading(true);
+
+    const sizeOptions = formData.size === '100ml' 
+      ? [{ ml: 100, label: '100ml Standard', price: formData.price }] 
+      : [{ ml: 50, label: '50ml Standard', price: formData.price }];
+
+    const perfumeToSave: any = {
+      name: formData.name,
+      brand: formData.brand,
+      price: formData.price,
+      image: formData.image,
+      hoverImage: formData.image, // Fallback
+      defaultSize: formData.size,
+      sizeOptions: sizeOptions,
+      gender: formData.gender,
+      description: formData.description,
+      family: formData.family,
+      concentration: formData.concentration,
+      tagline: formData.description.substring(0, 50) + '...',
+      notes: { top: [], heart: [], base: [] }, // Auto-fill empty to not break UI
+      longevityScore: 4,
+      projectionScore: 4,
+      seasons: ['Diario'],
+      occasions: ['Diario'],
+      rating: 5,
+      reviewCount: 0,
+      stock: 10,
+    };
+
+    if (editingPerfume) {
+      // Retain complex fields if editing
+      await updatePerfumeInFirestore(editingPerfume.id, {
+        ...perfumeToSave,
+        notes: editingPerfume.notes,
+        longevityScore: editingPerfume.longevityScore,
+        projectionScore: editingPerfume.projectionScore,
+        seasons: editingPerfume.seasons,
+        occasions: editingPerfume.occasions,
+        rating: editingPerfume.rating,
+        reviewCount: editingPerfume.reviewCount,
+        stock: editingPerfume.stock
+      });
+    } else {
+      await addPerfumeToFirestore(perfumeToSave);
+    }
+
+    setIsModalOpen(false);
+    setFormLoading(false);
+    loadData();
+  };
+
   // --- DATA PROCESSING FOR DASHBOARD ---
-  
-  // Total Revenue
   const totalRevenue = sales.reduce((sum, sale) => sum + (sale.total || 0), 0);
-  
-  // Products Sold Count
   const totalProductsSold = sales.reduce((sum, sale) => {
     return sum + (sale.items ? sale.items.reduce((s: number, item: any) => s + (item.cantidad || 0), 0) : 0);
   }, 0);
 
-  // Sales Over Time (Last 7 Days or grouped by date)
   const salesByDate: Record<string, number> = {};
   sales.forEach(sale => {
     if (!sale.fecha_venta) return;
@@ -60,7 +161,6 @@ export function AdminDashboard() {
     Ingresos: salesByDate[date]
   }));
 
-  // Top Selling Products
   const productSales: Record<string, number> = {};
   sales.forEach(sale => {
     if (!sale.items) return;
@@ -71,9 +171,8 @@ export function AdminDashboard() {
   const topProductsData = Object.keys(productSales)
     .map(name => ({ name, Cantidad: productSales[name] }))
     .sort((a, b) => b.Cantidad - a.Cantidad)
-    .slice(0, 5); // Top 5
+    .slice(0, 5);
 
-  // Sales by State
   const stateSales: Record<string, number> = {};
   sales.forEach(sale => {
     const state = sale.estado_venezuela || 'Desconocido';
@@ -86,7 +185,7 @@ export function AdminDashboard() {
   const COLORS = ['#f59e0b', '#d97706', '#b45309', '#78350f', '#fbbf24', '#fcd34d'];
 
   return (
-    <div className="min-h-screen bg-neutral-100 flex flex-col md:flex-row">
+    <div className="min-h-screen bg-neutral-100 flex flex-col md:flex-row font-sans">
       {/* Sidebar */}
       <div className="w-full md:w-64 bg-neutral-900 text-white flex flex-col">
         <div className="p-6 border-b border-neutral-800">
@@ -130,7 +229,7 @@ export function AdminDashboard() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-8 overflow-auto h-screen">
+      <div className="flex-1 p-8 overflow-auto h-screen relative">
         {loading ? (
           <div className="flex items-center justify-center h-full">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500"></div>
@@ -262,7 +361,10 @@ export function AdminDashboard() {
               <div>
                 <div className="flex justify-between items-center mb-6">
                   <h2 className="text-2xl font-bold text-neutral-800">Gestión de Inventario</h2>
-                  <button className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded shadow flex items-center text-sm font-medium transition-colors">
+                  <button 
+                    onClick={openNewPerfumeModal}
+                    className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded shadow flex items-center text-sm font-medium transition-colors"
+                  >
                     <Plus className="w-4 h-4 mr-2" />
                     Nuevo Perfume
                   </button>
@@ -297,13 +399,19 @@ export function AdminDashboard() {
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div className="text-sm text-neutral-900">${perfume.price}</div>
-                            <div className="text-xs text-neutral-500">{perfume.priceBs} Bs</div>
+                            <div className="text-xs text-neutral-500">{perfume.priceBs || (perfume.price * 50)} Bs</div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <button className="text-amber-600 hover:text-amber-900 mr-4">
+                            <button 
+                              onClick={() => openEditPerfumeModal(perfume)}
+                              className="text-amber-600 hover:text-amber-900 mr-4"
+                            >
                               <Edit2 className="w-4 h-4" />
                             </button>
-                            <button onClick={() => handleDelete(perfume.id)} className="text-red-600 hover:text-red-900">
+                            <button 
+                              onClick={() => handleDelete(perfume.id)} 
+                              className="text-red-600 hover:text-red-900"
+                            >
                               <Trash2 className="w-4 h-4" />
                             </button>
                           </td>
@@ -365,6 +473,156 @@ export function AdminDashboard() {
             )}
           </>
         )}
+
+        {/* Perfume Create/Edit Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="px-6 py-4 border-b border-neutral-200 flex justify-between items-center">
+                <h3 className="text-lg font-bold text-neutral-900">
+                  {editingPerfume ? 'Editar Perfume' : 'Agregar Nuevo Perfume'}
+                </h3>
+                <button onClick={() => setIsModalOpen(false)} className="text-neutral-400 hover:text-neutral-600">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <div className="border-b border-neutral-200 bg-neutral-50 px-6">
+                <nav className="-mb-px flex space-x-6">
+                  <button
+                    onClick={() => setFormTab('basic')}
+                    className={`py-3 px-1 border-b-2 font-medium text-sm ${formTab === 'basic' ? 'border-amber-500 text-amber-600' : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300'}`}
+                  >
+                    1. Información Básica
+                  </button>
+                  <button
+                    onClick={() => setFormTab('advanced')}
+                    className={`py-3 px-1 border-b-2 font-medium text-sm ${formTab === 'advanced' ? 'border-amber-500 text-amber-600' : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300'}`}
+                  >
+                    2. Detalles Opcionales
+                  </button>
+                </nav>
+              </div>
+
+              <div className="p-6 overflow-y-auto flex-1">
+                <form id="perfume-form" onSubmit={handleFormSubmit}>
+                  {formTab === 'basic' && (
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-neutral-700 mb-1">Nombre</label>
+                          <input type="text" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500" placeholder="Ej: Sauvage" />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-neutral-700 mb-1">Marca</label>
+                          <input type="text" required value={formData.brand} onChange={e => setFormData({...formData, brand: e.target.value})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500" placeholder="Ej: Dior" />
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-neutral-700 mb-1">Precio (USD)</label>
+                          <div className="relative">
+                            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-neutral-500">$</span>
+                            <input type="number" required min="1" value={formData.price} onChange={e => setFormData({...formData, price: Number(e.target.value)})} className="w-full border border-neutral-300 rounded p-2 pl-7 focus:ring-amber-500 focus:border-amber-500" />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-neutral-700 mb-1">Tamaño</label>
+                          <select value={formData.size} onChange={e => setFormData({...formData, size: e.target.value})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500">
+                            <option value="100ml">100ml</option>
+                            <option value="50ml">50ml</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-neutral-700 mb-1">URL de la Imagen (Link)</label>
+                        <input type="url" required value={formData.image} onChange={e => setFormData({...formData, image: e.target.value})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500" placeholder="https://ejemplo.com/foto.jpg" />
+                        <p className="text-xs text-neutral-500 mt-1">Busca la foto en Google, haz clic derecho "Copiar dirección de la imagen" y pégala aquí.</p>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-neutral-700 mb-1">Categoría / Género</label>
+                          <select value={formData.gender} onChange={e => setFormData({...formData, gender: e.target.value as any})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500">
+                            <option value="Hombre">Hombre</option>
+                            <option value="Mujer">Mujer</option>
+                            <option value="Unisex">Unisex</option>
+                            <option value="Nicho">Nicho</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-neutral-700 mb-1">Descripción</label>
+                        <textarea required value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} rows={3} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500"></textarea>
+                      </div>
+                    </div>
+                  )}
+
+                  {formTab === 'advanced' && (
+                    <div className="space-y-4">
+                      <div className="bg-amber-50 p-4 rounded-md border border-amber-200 mb-4">
+                        <p className="text-sm text-amber-800">
+                          Estos campos son opcionales y sirven para los filtros del catálogo. Si no estás seguro, déjalos como están.
+                        </p>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-neutral-700 mb-1">Familia Olfativa</label>
+                          <select value={formData.family} onChange={e => setFormData({...formData, family: e.target.value as any})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500">
+                            <option value="Todas">No Especificada</option>
+                            <option value="Cítrico">Cítrico</option>
+                            <option value="Amaderado">Amaderado</option>
+                            <option value="Oriental">Oriental</option>
+                            <option value="Floral">Floral</option>
+                            <option value="Gourmand">Gourmand</option>
+                            <option value="Fresco">Fresco</option>
+                            <option value="Frutal">Frutal</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-neutral-700 mb-1">Concentración</label>
+                          <select value={formData.concentration} onChange={e => setFormData({...formData, concentration: e.target.value as any})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500">
+                            <option value="Eau de Parfum">Eau de Parfum</option>
+                            <option value="Parfum">Parfum</option>
+                            <option value="Extrait de Parfum">Extrait de Parfum</option>
+                            <option value="Eau de Toilette">Eau de Toilette</option>
+                          </select>
+                        </div>
+                      </div>
+                      
+                      <p className="text-xs text-neutral-500 mt-4 italic">
+                        Nota: Las notas olfativas (salida, corazón, base) se dejarán en blanco para no recargar la página del producto.
+                      </p>
+                    </div>
+                  )}
+                </form>
+              </div>
+              
+              <div className="px-6 py-4 border-t border-neutral-200 bg-neutral-50 flex justify-end space-x-3">
+                <button 
+                  type="button" 
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-4 py-2 border border-neutral-300 rounded shadow-sm text-sm font-medium text-neutral-700 bg-white hover:bg-neutral-50"
+                >
+                  Cancelar
+                </button>
+                <button 
+                  type="submit" 
+                  form="perfume-form"
+                  disabled={formLoading}
+                  className="px-4 py-2 border border-transparent rounded shadow-sm text-sm font-medium text-black bg-amber-500 hover:bg-amber-400 focus:outline-none disabled:opacity-50"
+                >
+                  {formLoading ? 'Guardando...' : (editingPerfume ? 'Actualizar Perfume' : 'Crear Perfume')}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );

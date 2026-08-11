@@ -112,6 +112,28 @@ export async function savePerfumesToFirestore(perfumes: Perfume[]): Promise<bool
   }
 }
 
+export async function addPerfumeToFirestore(perfume: Omit<Perfume, 'id'>): Promise<string> {
+  try {
+    const colRef = collection(db, 'productos');
+    const docRef = await addDoc(colRef, perfume);
+    return docRef.id;
+  } catch (error) {
+    handleFirestoreError(error, OperationType.CREATE, 'productos');
+    return '';
+  }
+}
+
+export async function updatePerfumeInFirestore(id: string, perfume: Partial<Perfume>): Promise<boolean> {
+  try {
+    const docRef = doc(db, 'productos', id);
+    await updateDoc(docRef, perfume);
+    return true;
+  } catch (error) {
+    handleFirestoreError(error, OperationType.UPDATE, `productos/${id}`);
+    return false;
+  }
+}
+
 // Delete a perfume from Firestore
 export async function deletePerfumeFromFirestore(id: string): Promise<boolean> {
   try {

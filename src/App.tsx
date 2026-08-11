@@ -18,7 +18,8 @@ import {
   testFirestoreConnection,
   getPerfumesFromFirestore,
   savePerfumesToFirestore,
-  recordSaleInFirestore
+  recordSaleInFirestore,
+  auth
 } from './lib/firebase';
 import { AdminLogin } from './components/AdminLogin';
 import { AdminDashboard } from './components/AdminDashboard';
@@ -54,6 +55,7 @@ export default function App() {
   // Perfume Stock / Inventory State fetched from Firebase Firestore database
   const [perfumes, setPerfumes] = useState<Perfume[]>(SQL_PERFUMES_DATA);
   const [isStockManagerOpen, setIsStockManagerOpen] = useState<boolean>(false);
+  const [exchangeRate, setExchangeRate] = useState<number>(50);
 
   // Sync with Firebase Firestore on app boot
   useEffect(() => {
@@ -64,15 +66,44 @@ export default function App() {
       await testFirestoreConnection();
 
       try {
+        // Obtener tasa de cambio del BCV
+        let currentRate = 50; // Fallback
+        try {
+          const rateRes = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
+          const rateData = await rateRes.json();
+          if (rateData && rateData.promedio) {
+            currentRate = rateData.promedio;
+            setExchangeRate(currentRate);
+          }
+        } catch (e) {
+          console.warn('Error obteniendo tasa BCV, usando fallback:', e);
+        }
+
         const firestorePerfumes = await getPerfumesFromFirestore();
-        // Ensure Firestore has the complete catalog items matching SQL_PERFUMES_DATA
+        
+        // Función para aplicar la tasa de cambio a los precios
+        const applyExchangeRate = (perfumeList: Perfume[]) => {
+          return perfumeList.map(p => ({
+            ...p,
+            priceBs: parseFloat((p.price * currentRate).toFixed(2)),
+            sizeOptions: p.sizeOptions.map(opt => ({
+              ...opt,
+              priceBs: parseFloat((opt.price * currentRate).toFixed(2))
+            }))
+          }));
+        };
+
         const isUpdated = false; // Forzar actualización de precios en Firebase
         if (isUpdated) {
-          setPerfumes(firestorePerfumes);
+          setPerfumes(applyExchangeRate(firestorePerfumes));
         } else {
-          // Re-seed Firestore with the 58 requested catalog products with assigned ImgBB images
-          await savePerfumesToFirestore(SQL_PERFUMES_DATA);
-          setPerfumes(SQL_PERFUMES_DATA);
+          // Re-seed Firestore with the requested catalog products
+          if (firestorePerfumes.length === 0) {
+            await savePerfumesToFirestore(SQL_PERFUMES_DATA);
+            setPerfumes(applyExchangeRate(SQL_PERFUMES_DATA));
+          } else {
+            setPerfumes(applyExchangeRate(firestorePerfumes));
+          }
         }
       } catch (err) {
         console.error('Error sincronizando con Firebase Firestore:', err);
@@ -306,7 +337,7 @@ export default function App() {
         direccion: newOrder.address,
         ciudad: newOrder.city,
         total: newOrder.total,
-        totalBs: newOrder.total > 0 ? newOrder.total * 50 : 0,
+        totalBs: newOrder.total > 0 ? parseFloat((newOrder.total * exchangeRate).toFixed(2)) : 0,
         metodo_pago: newOrder.paymentMethod,
         referencia_pago: newOrder.trackingNumber || '',
         estado_pedido: 'Pagado',
