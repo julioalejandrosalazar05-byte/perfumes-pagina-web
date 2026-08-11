@@ -20,9 +20,29 @@ import {
   savePerfumesToFirestore,
   recordSaleInFirestore
 } from './lib/firebase';
+import { AdminLogin } from './components/AdminLogin';
+import { AdminDashboard } from './components/AdminDashboard';
+import { onAuthStateChanged, User } from 'firebase/auth';
 import { SQL_PERFUMES_DATA } from './data/sqlPerfumes';
 
 export default function App() {
+  const [isAdminRoute, setIsAdminRoute] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    // Check if we are on the admin route
+    if (window.location.pathname === '/admin' || window.location.search.includes('admin=true')) {
+      setIsAdminRoute(true);
+    }
+    
+    // Subscribe to auth state changes
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    
+    return () => unsubscribe();
+  }, []);
+
   const [activeTab, setActiveTab] = useState<ActiveTab>('inicio');
 
   // Perfume Stock / Inventory State fetched from Firebase Firestore database
@@ -40,7 +60,7 @@ export default function App() {
       try {
         const firestorePerfumes = await getPerfumesFromFirestore();
         // Ensure Firestore has the complete catalog items matching SQL_PERFUMES_DATA
-        const isUpdated = firestorePerfumes && firestorePerfumes.length === SQL_PERFUMES_DATA.length;
+        const isUpdated = false; // Forzar actualización de precios en Firebase
         if (isUpdated) {
           setPerfumes(firestorePerfumes);
         } else {
@@ -307,6 +327,13 @@ export default function App() {
   };
 
   const totalCartItemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+  if (isAdminRoute) {
+    if (user) {
+      return <AdminDashboard />;
+    }
+    return <AdminLogin />;
+  }
 
   return (
     <div className="min-h-screen bg-[#050505] text-[#e5e5e5] flex flex-col justify-between selection:bg-[#b8926a] selection:text-black">

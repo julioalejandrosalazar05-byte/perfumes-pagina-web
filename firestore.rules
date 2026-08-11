@@ -6,24 +6,33 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
-    // Marcas: Public read & write
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Marcas: Public read, admin write
     match /marcas/{brandId} {
-      allow read, write: if true;
+      allow read: if true;
+      allow write: if isAuthenticated();
     }
 
-    // Productos: Public read & write for store catalog, seed & inventory management
+    // Productos: Public read for store catalog, admin write
     match /productos/{productId} {
-      allow read, write: if true;
+      allow read: if true;
+      allow write: if isAuthenticated();
     }
 
-    // Ventas: Public read & write for sales records and purchases
+    // Ventas: Public create, admin read and write
     match /ventas/{saleId} {
-      allow read, write: if true;
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
     }
 
     // Tendencias por Estado en Venezuela
     match /tendencias_estado/{tendenciaId} {
-      allow read, write: if true;
+      allow read: if true;
+      allow write: if isAuthenticated();
     }
   }
 }
