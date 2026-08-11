@@ -40,7 +40,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             
             {/* Logo Emblem Header */}
             <div className="mb-2">
-              <LumiereLogo size="md" layout="horizontal" />
+              <LumiereLogo size="xl" layout="horizontal" fullImage={true} />
             </div>
 
             {/* Eyebrow - Tracked Gold Header */}
