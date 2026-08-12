@@ -7,7 +7,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Banderas",
     "badge": "DISEÑADOR",
     "tagline": "Banderas Her Secret Absolu - Fragancia elegante y distintiva (Mujer).",
-    "description": "Banderas Her Secret Absolu ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Una creación magistral que captura la esencia pura de la elegancia. Sus notas evolucionan sutilmente en la piel, revelando un carácter magnético y seductor.",
     "price": 65,
     "priceBs": 9100,
     "defaultSize": "100ml",
@@ -86,8 +86,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 80,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 12
@@ -98,7 +98,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "ÁRABE / NICHO",
     "tagline": "Armaf Tag Uomo Rosso - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf Tag Uomo Rosso ofrece una estela inconfundible de alta calidad. Presenta notas de Menta, Cardamomo con un corazón de Salvia, Lavanda y fondo de Vetiver, Ámbar Gris.",
+    "description": "El equilibrio perfecto entre tradición y modernidad. Esta fragancia destaca por su luminosidad inmediata y un fondo profundo que deja una estela inolvidable.",
     "price": 85,
     "priceBs": 11900,
     "defaultSize": "100ml",
@@ -177,8 +177,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 87,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 13
@@ -189,7 +189,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Carolina Herrera",
     "badge": "DISEÑADOR",
     "tagline": "Carolina Herrera 212 VIP Black NYC - Fragancia elegante y distintiva (Hombre).",
-    "description": "Carolina Herrera 212 VIP Black NYC ofrece una estela inconfundible de alta calidad. Presenta notas de Menta, Cardamomo con un corazón de Salvia, Lavanda y fondo de Vetiver, Ámbar Gris.",
+    "description": "Diseñada para quienes no temen destacar. Su composición aromática es una verdadera obra de arte olfativa, llena de contrastes fascinantes y vibrantes.",
     "price": 125,
     "priceBs": 17500,
     "defaultSize": "100ml",
@@ -267,8 +267,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 94,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 14
@@ -279,7 +279,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Banderas",
     "badge": "DISEÑADOR",
     "tagline": "Banderas The Icon Supreme - Fragancia elegante y distintiva (Hombre).",
-    "description": "Banderas The Icon Supreme ofrece una estela inconfundible de alta calidad. Presenta notas de Menta, Cardamomo con un corazón de Salvia, Lavanda y fondo de Vetiver, Ámbar Gris.",
+    "description": "Una sinfonía de notas seleccionadas a mano. Un aroma envolvente y misterioso que se adapta a cualquier ocasión, dejando una impresión de lujo absoluto.",
     "price": 70,
     "priceBs": 9800,
     "defaultSize": "100ml",
@@ -357,8 +357,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 101,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 15
@@ -369,7 +369,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "ODYSSEY COLLECTION",
     "tagline": "Armaf Odyssey Ba Ha Mas - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf Odyssey Ba Ha Mas ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Un viaje sensorial único. Desde su salida refrescante hasta su fondo cálido, esta fragancia es el accesorio invisible perfecto para la persona segura de sí misma.",
     "price": 95,
     "priceBs": 13300,
     "defaultSize": "100ml",
@@ -448,8 +448,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 108,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 16
@@ -460,7 +460,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Issey Miyake",
     "badge": "DISEÑADOR",
     "tagline": "Issey Miyake L'Eau d'Issey Pour Homme Intense - Fragancia elegante y distintiva (Hombre).",
-    "description": "Issey Miyake L'Eau d'Issey Pour Homme Intense ofrece una estela inconfundible de alta calidad. Presenta notas de Bergamota, Manzana con un corazón de Jazmín, Rosa y fondo de Vainilla, Ámbar.",
+    "description": "Sofisticación embotellada. Su estructura olfativa compleja y refinada garantiza una presencia inconfundible, ideal para eventos especiales o uso diario premium.",
     "price": 110,
     "priceBs": 15400,
     "defaultSize": "100ml",
@@ -533,8 +533,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 115,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 17
@@ -545,7 +545,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Cacharel",
     "badge": "DISEÑADOR",
     "tagline": "Cacharel Amor Amor - Fragancia elegante y distintiva (Mujer).",
-    "description": "Cacharel Amor Amor ofrece una estela inconfundible de alta calidad. Presenta notas de Cereza Roja, Peonía con un corazón de Jazmín Sambac, Rosa de Damasco y fondo de Vainilla, Ámbar.",
+    "description": "Inspirada en el lujo moderno y la exclusividad. Una mezcla cautivadora que resalta la personalidad de quien la lleva con toques intensos y delicados a la vez.",
     "price": 80,
     "priceBs": 11200,
     "defaultSize": "100ml",
@@ -623,8 +623,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 122,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 18
@@ -635,7 +635,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "ODYSSEY COLLECTION",
     "tagline": "Armaf Odyssey Homme White Edition - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf Odyssey Homme White Edition ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Una declaración de estilo absoluto. Cada gota de esta fragancia encierra una profunda riqueza aromática, proyectando confianza, poder y un gusto impecable.",
     "price": 90,
     "priceBs": 12600,
     "defaultSize": "100ml",
@@ -715,8 +715,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 129,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 19
@@ -727,7 +727,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Rasasi",
     "badge": "ÁRABE / NICHO",
     "tagline": "Rasasi Hawas ICE For Him - Fragancia elegante y distintiva (Hombre).",
-    "description": "Rasasi Hawas ICE For Him ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Sensualidad y frescura en perfecta armonía. Una esencia que atrapa los sentidos y despierta emociones, convirtiéndose en tu firma personal definitiva.",
     "price": 130,
     "priceBs": 18200,
     "defaultSize": "100ml",
@@ -806,8 +806,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 136,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 20
@@ -818,7 +818,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Halloween",
     "badge": "DISEÑADOR",
     "tagline": "Halloween Halloween Blossom - Fragancia elegante y distintiva (Mujer).",
-    "description": "Halloween Halloween Blossom ofrece una estela inconfundible de alta calidad. Presenta notas de Cereza Roja, Peonía con un corazón de Jazmín Sambac, Rosa de Damasco y fondo de Vainilla, Ámbar.",
+    "description": "La máxima expresión del buen gusto. Una estela duradera y sofisticada que acompaña durante todo el día, evolucionando de manera espectacular sobre la piel.",
     "price": 60,
     "priceBs": 8400,
     "defaultSize": "100ml",
@@ -896,8 +896,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 143,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 21
@@ -908,7 +908,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "YARA COLLECTION",
     "tagline": "Lattafa Yara Candy - Fragancia elegante y distintiva (Mujer).",
-    "description": "Lattafa Yara Candy ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Una creación magistral que captura la esencia pura de la elegancia. Sus notas evolucionan sutilmente en la piel, revelando un carácter magnético y seductor.",
     "price": 105,
     "priceBs": 14700,
     "defaultSize": "100ml",
@@ -987,8 +987,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 150,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 22
@@ -999,7 +999,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "CLUB DE NUIT",
     "tagline": "Armaf Club de Nuit Untold - Fragancia elegante y distintiva (Unisex).",
-    "description": "Armaf Club de Nuit Untold ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "El equilibrio perfecto entre tradición y modernidad. Esta fragancia destaca por su luminosidad inmediata y un fondo profundo que deja una estela inolvidable.",
     "price": 115,
     "priceBs": 16100,
     "defaultSize": "100ml",
@@ -1079,8 +1079,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 157,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 23
@@ -1091,7 +1091,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "PRIDE OF LATTAFA",
     "tagline": "Lattafa Nebras - Fragancia elegante y distintiva (Unisex).",
-    "description": "Lattafa Nebras ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Diseñada para quienes no temen destacar. Su composición aromática es una verdadera obra de arte olfativa, llena de contrastes fascinantes y vibrantes.",
     "price": 110,
     "priceBs": 15400,
     "defaultSize": "100ml",
@@ -1170,8 +1170,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 164,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 24
@@ -1182,7 +1182,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "CLUB DE NUIT",
     "tagline": "Armaf Club de Nuit Sillage - Fragancia elegante y distintiva (Unisex).",
-    "description": "Armaf Club de Nuit Sillage ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Una sinfonía de notas seleccionadas a mano. Un aroma envolvente y misterioso que se adapta a cualquier ocasión, dejando una impresión de lujo absoluto.",
     "price": 100,
     "priceBs": 14000,
     "defaultSize": "100ml",
@@ -1261,8 +1261,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 171,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 25
@@ -1273,7 +1273,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Carolina Herrera",
     "badge": "DISEÑADOR",
     "tagline": "Carolina Herrera CH Men - Fragancia elegante y distintiva (Hombre).",
-    "description": "Carolina Herrera CH Men ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Un viaje sensorial único. Desde su salida refrescante hasta su fondo cálido, esta fragancia es el accesorio invisible perfecto para la persona segura de sí misma.",
     "price": 120,
     "priceBs": 16800,
     "defaultSize": "100ml",
@@ -1352,8 +1352,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 178,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 26
@@ -1364,7 +1364,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Ralph Lauren",
     "badge": "DISEÑADOR",
     "tagline": "Ralph Lauren Polo Red - Fragancia elegante y distintiva (Hombre).",
-    "description": "Ralph Lauren Polo Red ofrece una estela inconfundible de alta calidad. Presenta notas de Menta, Cardamomo con un corazón de Salvia, Lavanda y fondo de Vetiver, Ámbar Gris.",
+    "description": "Sofisticación embotellada. Su estructura olfativa compleja y refinada garantiza una presencia inconfundible, ideal para eventos especiales o uso diario premium.",
     "price": 115,
     "priceBs": 16100,
     "defaultSize": "100ml",
@@ -1442,8 +1442,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 185,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 12
@@ -1454,7 +1454,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "DELIGHTS",
     "tagline": "Armaf Bon Bon - Fragancia elegante y distintiva (Mujer).",
-    "description": "Armaf Bon Bon ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Inspirada en el lujo moderno y la exclusividad. Una mezcla cautivadora que resalta la personalidad de quien la lleva con toques intensos y delicados a la vez.",
     "price": 95,
     "priceBs": 13300,
     "defaultSize": "100ml",
@@ -1533,8 +1533,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 192,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": false,
     "stock": 13
@@ -1545,7 +1545,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "ÁRABE / NICHO",
     "tagline": "Lattafa Eclaire Pistache - Fragancia elegante y distintiva (Mujer).",
-    "description": "Lattafa Eclaire Pistache ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Una declaración de estilo absoluto. Cada gota de esta fragancia encierra una profunda riqueza aromática, proyectando confianza, poder y un gusto impecable.",
     "price": 120,
     "priceBs": 16800,
     "defaultSize": "100ml",
@@ -1624,8 +1624,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 199,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 14
@@ -1636,7 +1636,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Nautica",
     "badge": "DISEÑADOR",
     "tagline": "Nautica Nautica Voyage - Fragancia elegante y distintiva (Hombre).",
-    "description": "Nautica Nautica Voyage ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Sensualidad y frescura en perfecta armonía. Una esencia que atrapa los sentidos y despierta emociones, convirtiéndose en tu firma personal definitiva.",
     "price": 45,
     "priceBs": 6300,
     "defaultSize": "100ml",
@@ -1714,8 +1714,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 206,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 15
@@ -1726,7 +1726,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "ODYSSEY COLLECTION",
     "tagline": "Armaf Odyssey Mandarin Sky Elixir - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf Odyssey Mandarin Sky Elixir ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "La máxima expresión del buen gusto. Una estela duradera y sofisticada que acompaña durante todo el día, evolucionando de manera espectacular sobre la piel.",
     "price": 95,
     "priceBs": 13300,
     "defaultSize": "100ml",
@@ -1805,8 +1805,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 213,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 16
@@ -1817,7 +1817,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Ariana Grande",
     "badge": "CELEBRIDAD",
     "tagline": "Ariana Grande Thank U, Next - Fragancia elegante y distintiva (Mujer).",
-    "description": "Ariana Grande Thank U, Next ofrece una estela inconfundible de alta calidad. Presenta notas de Sandía Jugosa, Frambuesa con un corazón de Lichi, Peonía y fondo de Sándalo, Almizcle Blanco.",
+    "description": "Una creación magistral que captura la esencia pura de la elegancia. Sus notas evolucionan sutilmente en la piel, revelando un carácter magnético y seductor.",
     "price": 85,
     "priceBs": 11900,
     "defaultSize": "100ml",
@@ -1895,8 +1895,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 220,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": false,
     "stock": 17
@@ -1907,7 +1907,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "ÁRABE / NICHO",
     "tagline": "Lattafa Mayar Natural Intense - Fragancia elegante y distintiva (Mujer).",
-    "description": "Lattafa Mayar Natural Intense ofrece una estela inconfundible de alta calidad. Presenta notas de Sandía Jugosa, Frambuesa con un corazón de Lichi, Peonía y fondo de Sándalo, Almizcle Blanco.",
+    "description": "El equilibrio perfecto entre tradición y modernidad. Esta fragancia destaca por su luminosidad inmediata y un fondo profundo que deja una estela inolvidable.",
     "price": 105,
     "priceBs": 14700,
     "defaultSize": "100ml",
@@ -1986,8 +1986,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 227,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 18
@@ -1998,7 +1998,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Montblanc",
     "badge": "DISEÑADOR",
     "tagline": "Montblanc Legend Blue - Fragancia elegante y distintiva (Hombre).",
-    "description": "Montblanc Legend Blue ofrece una estela inconfundible de alta calidad. Presenta notas de Menta, Cardamomo con un corazón de Salvia, Lavanda y fondo de Vetiver, Ámbar Gris.",
+    "description": "Diseñada para quienes no temen destacar. Su composición aromática es una verdadera obra de arte olfativa, llena de contrastes fascinantes y vibrantes.",
     "price": 105,
     "priceBs": 14700,
     "defaultSize": "100ml",
@@ -2076,8 +2076,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 234,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 19
@@ -2088,7 +2088,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Antonio Banderas",
     "badge": "DISEÑADOR",
     "tagline": "Antonio Banderas Blue Seduction For Men - Fragancia elegante y distintiva (Hombre).",
-    "description": "Antonio Banderas Blue Seduction For Men ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Una sinfonía de notas seleccionadas a mano. Un aroma envolvente y misterioso que se adapta a cualquier ocasión, dejando una impresión de lujo absoluto.",
     "price": 50,
     "priceBs": 7000,
     "defaultSize": "100ml",
@@ -2166,8 +2166,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 241,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": false,
     "stock": 20
@@ -2178,7 +2178,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "French Avenue",
     "badge": "NICHO / LUXE",
     "tagline": "French Avenue Liquid Brun - Fragancia elegante y distintiva (Unisex).",
-    "description": "French Avenue Liquid Brun ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Un viaje sensorial único. Desde su salida refrescante hasta su fondo cálido, esta fragancia es el accesorio invisible perfecto para la persona segura de sí misma.",
     "price": 135,
     "priceBs": 18900,
     "defaultSize": "100ml",
@@ -2257,8 +2257,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 248,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 21
@@ -2269,7 +2269,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "ODYSSEY COLLECTION",
     "tagline": "Armaf Odyssey Mandarin Limited Edition - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf Odyssey Mandarin Limited Edition ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Sofisticación embotellada. Su estructura olfativa compleja y refinada garantiza una presencia inconfundible, ideal para eventos especiales o uso diario premium.",
     "price": 95,
     "priceBs": 13300,
     "defaultSize": "100ml",
@@ -2348,8 +2348,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 255,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 22
@@ -2360,7 +2360,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "PRIDE OF LATTAFA",
     "tagline": "Lattafa Angham - Fragancia elegante y distintiva (Mujer).",
-    "description": "Lattafa Angham ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Inspirada en el lujo moderno y la exclusividad. Una mezcla cautivadora que resalta la personalidad de quien la lleva con toques intensos y delicados a la vez.",
     "price": 115,
     "priceBs": 16100,
     "defaultSize": "100ml",
@@ -2440,8 +2440,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 262,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 23
@@ -2452,7 +2452,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Dumont Paris",
     "badge": "EXTRAIT DE PARFUM",
     "tagline": "Dumont Paris Nitro Red Pour Homme - Fragancia elegante y distintiva (Hombre).",
-    "description": "Dumont Paris Nitro Red Pour Homme ofrece una estela inconfundible de alta calidad. Presenta notas de Sandía Jugosa, Frambuesa con un corazón de Lichi, Peonía y fondo de Sándalo, Almizcle Blanco.",
+    "description": "Una declaración de estilo absoluto. Cada gota de esta fragancia encierra una profunda riqueza aromática, proyectando confianza, poder y un gusto impecable.",
     "price": 130,
     "priceBs": 18200,
     "defaultSize": "100ml",
@@ -2531,8 +2531,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 269,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 24
@@ -2543,7 +2543,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "PRIDE OF LATTAFA",
     "tagline": "Lattafa Musamam White Intense - Fragancia elegante y distintiva (Unisex).",
-    "description": "Lattafa Musamam White Intense ofrece una estela inconfundible de alta calidad. Presenta notas de Bergamota, Manzana con un corazón de Jazmín, Rosa y fondo de Vainilla, Ámbar.",
+    "description": "Sensualidad y frescura en perfecta armonía. Una esencia que atrapa los sentidos y despierta emociones, convirtiéndose en tu firma personal definitiva.",
     "price": 125,
     "priceBs": 17500,
     "defaultSize": "100ml",
@@ -2617,8 +2617,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 276,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 25
@@ -2629,7 +2629,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Carolina Herrera",
     "badge": "DISEÑADOR",
     "tagline": "Carolina Herrera 212 NYC - Fragancia elegante y distintiva (Mujer).",
-    "description": "Carolina Herrera 212 NYC ofrece una estela inconfundible de alta calidad. Presenta notas de Cereza Roja, Peonía con un corazón de Jazmín Sambac, Rosa de Damasco y fondo de Vainilla, Ámbar.",
+    "description": "La máxima expresión del buen gusto. Una estela duradera y sofisticada que acompaña durante todo el día, evolucionando de manera espectacular sobre la piel.",
     "price": 115,
     "priceBs": 16100,
     "defaultSize": "100ml",
@@ -2707,8 +2707,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 83,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 26
@@ -2719,7 +2719,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Tommy Hilfiger",
     "badge": "DISEÑADOR",
     "tagline": "Tommy Hilfiger Tommy - Fragancia elegante y distintiva (Hombre).",
-    "description": "Tommy Hilfiger Tommy ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Una creación magistral que captura la esencia pura de la elegancia. Sus notas evolucionan sutilmente en la piel, revelando un carácter magnético y seductor.",
     "price": 70,
     "priceBs": 9800,
     "defaultSize": "100ml",
@@ -2797,8 +2797,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 90,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 12
@@ -2809,7 +2809,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Antonio Banderas",
     "badge": "DISEÑADOR",
     "tagline": "Antonio Banderas King of Seduction Absolute - Fragancia elegante y distintiva (Hombre).",
-    "description": "Antonio Banderas King of Seduction Absolute ofrece una estela inconfundible de alta calidad. Presenta notas de Menta, Cardamomo con un corazón de Salvia, Lavanda y fondo de Vetiver, Ámbar Gris.",
+    "description": "El equilibrio perfecto entre tradición y modernidad. Esta fragancia destaca por su luminosidad inmediata y un fondo profundo que deja una estela inolvidable.",
     "price": 55,
     "priceBs": 7700,
     "defaultSize": "100ml",
@@ -2887,8 +2887,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 97,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": false,
     "stock": 13
@@ -2899,7 +2899,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "ÁRABE / NICHO",
     "tagline": "Lattafa His Confession - Fragancia elegante y distintiva (Hombre).",
-    "description": "Lattafa His Confession ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Diseñada para quienes no temen destacar. Su composición aromática es una verdadera obra de arte olfativa, llena de contrastes fascinantes y vibrantes.",
     "price": 110,
     "priceBs": 15400,
     "defaultSize": "100ml",
@@ -2979,8 +2979,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 104,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 14
@@ -2991,7 +2991,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "BESTSELLER ÁRABE",
     "tagline": "Lattafa Khamrah - Fragancia elegante y distintiva (Unisex).",
-    "description": "Lattafa Khamrah ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Una sinfonía de notas seleccionadas a mano. Un aroma envolvente y misterioso que se adapta a cualquier ocasión, dejando una impresión de lujo absoluto.",
     "price": 120,
     "priceBs": 16800,
     "defaultSize": "100ml",
@@ -3070,8 +3070,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 111,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 15
@@ -3082,7 +3082,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "BESTSELLER ÁRABE",
     "tagline": "Lattafa Asad - Fragancia elegante y distintiva (Hombre).",
-    "description": "Lattafa Asad ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Un viaje sensorial único. Desde su salida refrescante hasta su fondo cálido, esta fragancia es el accesorio invisible perfecto para la persona segura de sí misma.",
     "price": 95,
     "priceBs": 13300,
     "defaultSize": "100ml",
@@ -3162,8 +3162,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 118,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 16
@@ -3174,7 +3174,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "CLUB DE NUIT",
     "tagline": "Armaf Club de Nuit Intense Man - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf Club de Nuit Intense Man ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Sofisticación embotellada. Su estructura olfativa compleja y refinada garantiza una presencia inconfundible, ideal para eventos especiales o uso diario premium.",
     "price": 90,
     "priceBs": 12600,
     "defaultSize": "100ml",
@@ -3253,8 +3253,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 125,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 17
@@ -3265,7 +3265,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Dolce & Gabbana",
     "badge": "DISEÑADOR",
     "tagline": "Dolce & Gabbana Light Blue - Fragancia elegante y distintiva (Mujer).",
-    "description": "Dolce & Gabbana Light Blue ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Inspirada en el lujo moderno y la exclusividad. Una mezcla cautivadora que resalta la personalidad de quien la lleva con toques intensos y delicados a la vez.",
     "price": 110,
     "priceBs": 15400,
     "defaultSize": "100ml",
@@ -3343,8 +3343,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 132,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 18
@@ -3355,7 +3355,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Ariana Grande",
     "badge": "CELEBRIDAD",
     "tagline": "Ariana Grande Cloud - Fragancia elegante y distintiva (Mujer).",
-    "description": "Ariana Grande Cloud ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Una declaración de estilo absoluto. Cada gota de esta fragancia encierra una profunda riqueza aromática, proyectando confianza, poder y un gusto impecable.",
     "price": 90,
     "priceBs": 12600,
     "defaultSize": "100ml",
@@ -3433,8 +3433,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 139,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": false,
     "stock": 19
@@ -3445,7 +3445,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Carolina Herrera",
     "badge": "DISEÑADOR",
     "tagline": "Carolina Herrera 212 Men NYC - Fragancia elegante y distintiva (Hombre).",
-    "description": "Carolina Herrera 212 Men NYC ofrece una estela inconfundible de alta calidad. Presenta notas de Menta, Cardamomo con un corazón de Salvia, Lavanda y fondo de Vetiver, Ámbar Gris.",
+    "description": "Sensualidad y frescura en perfecta armonía. Una esencia que atrapa los sentidos y despierta emociones, convirtiéndose en tu firma personal definitiva.",
     "price": 120,
     "priceBs": 16800,
     "defaultSize": "100ml",
@@ -3523,8 +3523,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 146,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 20
@@ -3535,7 +3535,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "French Avenue",
     "badge": "NICHO / LUXE",
     "tagline": "French Avenue Veneno Bianco - Fragancia elegante y distintiva (Unisex).",
-    "description": "French Avenue Veneno Bianco ofrece una estela inconfundible de alta calidad. Presenta notas de Cereza Roja, Peonía con un corazón de Jazmín Sambac, Rosa de Damasco y fondo de Vainilla, Ámbar.",
+    "description": "La máxima expresión del buen gusto. Una estela duradera y sofisticada que acompaña durante todo el día, evolucionando de manera espectacular sobre la piel.",
     "price": 130,
     "priceBs": 18200,
     "defaultSize": "100ml",
@@ -3614,8 +3614,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 153,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 21
@@ -3626,7 +3626,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "CLUB DE NUIT",
     "tagline": "Armaf Club de Nuit Milestone - Fragancia elegante y distintiva (Unisex).",
-    "description": "Armaf Club de Nuit Milestone ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Una creación magistral que captura la esencia pura de la elegancia. Sus notas evolucionan sutilmente en la piel, revelando un carácter magnético y seductor.",
     "price": 95,
     "priceBs": 13300,
     "defaultSize": "100ml",
@@ -3705,8 +3705,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 160,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 22
@@ -3717,7 +3717,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "ODYSSEY COLLECTION",
     "tagline": "Armaf Odyssey Artisto - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf Odyssey Artisto ofrece una estela inconfundible de alta calidad. Presenta notas de Menta, Cardamomo con un corazón de Salvia, Lavanda y fondo de Vetiver, Ámbar Gris.",
+    "description": "El equilibrio perfecto entre tradición y modernidad. Esta fragancia destaca por su luminosidad inmediata y un fondo profundo que deja una estela inolvidable.",
     "price": 90,
     "priceBs": 12600,
     "defaultSize": "100ml",
@@ -3796,8 +3796,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 167,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 23
@@ -3808,7 +3808,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "YARA COLLECTION",
     "tagline": "Lattafa Yara Moi - Fragancia elegante y distintiva (Mujer).",
-    "description": "Lattafa Yara Moi ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Diseñada para quienes no temen destacar. Su composición aromática es una verdadera obra de arte olfativa, llena de contrastes fascinantes y vibrantes.",
     "price": 100,
     "priceBs": 14000,
     "defaultSize": "100ml",
@@ -3887,8 +3887,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 174,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 24
@@ -3899,7 +3899,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "YARA COLLECTION",
     "tagline": "Lattafa Yara - Fragancia elegante y distintiva (Mujer).",
-    "description": "Lattafa Yara ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Una sinfonía de notas seleccionadas a mano. Un aroma envolvente y misterioso que se adapta a cualquier ocasión, dejando una impresión de lujo absoluto.",
     "price": 100,
     "priceBs": 14000,
     "defaultSize": "100ml",
@@ -3978,8 +3978,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 181,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": true,
     "stock": 25
@@ -3990,7 +3990,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "ÁRABE / NICHO",
     "tagline": "Lattafa Mayar - Fragancia elegante y distintiva (Mujer).",
-    "description": "Lattafa Mayar ofrece una estela inconfundible de alta calidad. Presenta notas de Sandía Jugosa, Frambuesa con un corazón de Lichi, Peonía y fondo de Sándalo, Almizcle Blanco.",
+    "description": "Un viaje sensorial único. Desde su salida refrescante hasta su fondo cálido, esta fragancia es el accesorio invisible perfecto para la persona segura de sí misma.",
     "price": 105,
     "priceBs": 14700,
     "defaultSize": "100ml",
@@ -4069,8 +4069,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 188,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 26
@@ -4081,7 +4081,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Issey Miyake",
     "badge": "DISEÑADOR",
     "tagline": "Issey Miyake L'Eau d'Issey Pour Homme - Fragancia elegante y distintiva (Hombre).",
-    "description": "Issey Miyake L'Eau d'Issey Pour Homme ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "Sofisticación embotellada. Su estructura olfativa compleja y refinada garantiza una presencia inconfundible, ideal para eventos especiales o uso diario premium.",
     "price": 105,
     "priceBs": 14700,
     "defaultSize": "100ml",
@@ -4159,8 +4159,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 195,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 12
@@ -4171,7 +4171,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "PRIDE OF LATTAFA",
     "tagline": "Lattafa Art of Nature II - Fragancia elegante y distintiva (Unisex).",
-    "description": "Lattafa Art of Nature II ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Inspirada en el lujo moderno y la exclusividad. Una mezcla cautivadora que resalta la personalidad de quien la lleva con toques intensos y delicados a la vez.",
     "price": 115,
     "priceBs": 16100,
     "defaultSize": "100ml",
@@ -4251,8 +4251,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 202,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 13
@@ -4263,7 +4263,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Guess",
     "badge": "DISEÑADOR",
     "tagline": "Guess Guess Seductive Red - Fragancia elegante y distintiva (Mujer).",
-    "description": "Guess Guess Seductive Red ofrece una estela inconfundible de alta calidad. Presenta notas de Cereza Roja, Peonía con un corazón de Jazmín Sambac, Rosa de Damasco y fondo de Vainilla, Ámbar.",
+    "description": "Una declaración de estilo absoluto. Cada gota de esta fragancia encierra una profunda riqueza aromática, proyectando confianza, poder y un gusto impecable.",
     "price": 85,
     "priceBs": 11900,
     "defaultSize": "100ml",
@@ -4341,8 +4341,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 209,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": false,
     "stock": 14
@@ -4353,7 +4353,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "ODYSSEY COLLECTION",
     "tagline": "Armaf Odyssey Homme Black Edition - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf Odyssey Homme Black Edition ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Sensualidad y frescura en perfecta armonía. Una esencia que atrapa los sentidos y despierta emociones, convirtiéndose en tu firma personal definitiva.",
     "price": 90,
     "priceBs": 12600,
     "defaultSize": "100ml",
@@ -4433,8 +4433,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 216,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 15
@@ -4445,7 +4445,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "PRIDE OF ARMAF",
     "tagline": "Armaf The Pride of Armaf Admiral - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf The Pride of Armaf Admiral ofrece una estela inconfundible de alta calidad. Presenta notas de Menta, Cardamomo con un corazón de Salvia, Lavanda y fondo de Vetiver, Ámbar Gris.",
+    "description": "La máxima expresión del buen gusto. Una estela duradera y sofisticada que acompaña durante todo el día, evolucionando de manera espectacular sobre la piel.",
     "price": 110,
     "priceBs": 15400,
     "defaultSize": "100ml",
@@ -4524,8 +4524,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 223,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 16
@@ -4536,7 +4536,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "ÁRABE / NICHO",
     "tagline": "Armaf Connoisseur Woman - Fragancia elegante y distintiva (Mujer).",
-    "description": "Armaf Connoisseur Woman ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Una creación magistral que captura la esencia pura de la elegancia. Sus notas evolucionan sutilmente en la piel, revelando un carácter magnético y seductor.",
     "price": 125,
     "priceBs": 17500,
     "defaultSize": "100ml",
@@ -4616,8 +4616,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 230,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 17
@@ -4628,7 +4628,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Armaf",
     "badge": "ODYSSEY COLLECTION",
     "tagline": "Armaf Odyssey Limoni - Fragancia elegante y distintiva (Hombre).",
-    "description": "Armaf Odyssey Limoni ofrece una estela inconfundible de alta calidad. Presenta notas de Limón de Sicilia, Bergamota con un corazón de Pimienta Rosa, Flor de Azahar y fondo de Madera de Cedro, Almizcle.",
+    "description": "El equilibrio perfecto entre tradición y modernidad. Esta fragancia destaca por su luminosidad inmediata y un fondo profundo que deja una estela inolvidable.",
     "price": 90,
     "priceBs": 12600,
     "defaultSize": "100ml",
@@ -4707,8 +4707,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 237,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 18
@@ -4719,7 +4719,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Antonio Banderas",
     "badge": "DISEÑADOR",
     "tagline": "Antonio Banderas The Secret - Fragancia elegante y distintiva (Hombre).",
-    "description": "Antonio Banderas The Secret ofrece una estela inconfundible de alta calidad. Presenta notas de Azafrán, Pimienta Negra con un corazón de Incienso, Tuberosa y fondo de Oud, Vainilla, Ámbar.",
+    "description": "Diseñada para quienes no temen destacar. Su composición aromática es una verdadera obra de arte olfativa, llena de contrastes fascinantes y vibrantes.",
     "price": 55,
     "priceBs": 7700,
     "defaultSize": "100ml",
@@ -4798,8 +4798,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 244,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": false,
     "isNiche": false,
     "stock": 19
@@ -4810,7 +4810,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Marc Jacobs",
     "badge": "DISEÑADOR",
     "tagline": "Marc Jacobs Daisy Dream - Fragancia elegante y distintiva (Mujer).",
-    "description": "Marc Jacobs Daisy Dream ofrece una estela inconfundible de alta calidad. Presenta notas de Cereza Roja, Peonía con un corazón de Jazmín Sambac, Rosa de Damasco y fondo de Vainilla, Ámbar.",
+    "description": "Una sinfonía de notas seleccionadas a mano. Un aroma envolvente y misterioso que se adapta a cualquier ocasión, dejando una impresión de lujo absoluto.",
     "price": 120,
     "priceBs": 16800,
     "defaultSize": "100ml",
@@ -4888,8 +4888,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 251,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": false,
     "stock": 20
@@ -4900,7 +4900,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Lattafa",
     "badge": "BESTSELLER ÁRABE",
     "tagline": "Lattafa Khamrah Qahwa - Fragancia elegante y distintiva (Unisex).",
-    "description": "Lattafa Khamrah Qahwa ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Un viaje sensorial único. Desde su salida refrescante hasta su fondo cálido, esta fragancia es el accesorio invisible perfecto para la persona segura de sí misma.",
     "price": 125,
     "priceBs": 17500,
     "defaultSize": "100ml",
@@ -4979,8 +4979,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.8,
-    "reviewCount": 258,
+    "rating": 0.8,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 21
@@ -4991,7 +4991,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Dumont Paris",
     "badge": "EXTRAIT DE PARFUM",
     "tagline": "Dumont Paris Nitro Red Intensely Pour Homme - Fragancia elegante y distintiva (Hombre).",
-    "description": "Dumont Paris Nitro Red Intensely Pour Homme ofrece una estela inconfundible de alta calidad. Presenta notas de Sandía Jugosa, Frambuesa con un corazón de Lichi, Peonía y fondo de Sándalo, Almizcle Blanco.",
+    "description": "Sofisticación embotellada. Su estructura olfativa compleja y refinada garantiza una presencia inconfundible, ideal para eventos especiales o uso diario premium.",
     "price": 140,
     "priceBs": 19600,
     "defaultSize": "100ml",
@@ -5070,8 +5070,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.88,
-    "reviewCount": 265,
+    "rating": 0.88,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 22
@@ -5082,7 +5082,7 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
     "brand": "Afnan",
     "badge": "BESTSELLER ÁRABE",
     "tagline": "Afnan 9 PM - Fragancia elegante y distintiva (Hombre).",
-    "description": "Afnan 9 PM ofrece una estela inconfundible de alta calidad. Presenta notas de Caramelo, Mandarina con un corazón de Canela, Vainilla y fondo de Habas Tonka, Sándalo.",
+    "description": "Inspirada en el lujo moderno y la exclusividad. Una mezcla cautivadora que resalta la personalidad de quien la lleva con toques intensos y delicados a la vez.",
     "price": 90,
     "priceBs": 12600,
     "defaultSize": "100ml",
@@ -5161,8 +5161,8 @@ export const SQL_PERFUMES_DATA: Perfume[] = [
       "Eventos",
       "Cita Romántica"
     ],
-    "rating": 4.96,
-    "reviewCount": 272,
+    "rating": 0.96,
+    "reviewCount": 0,
     "isBestseller": true,
     "isNiche": true,
     "stock": 23
