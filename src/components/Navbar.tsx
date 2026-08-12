@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="flex items-center justify-center group focus:outline-none cursor-pointer mx-auto md:mx-0"
               id="brand-logo-btn"
             >
-              <LumiereLogo size="md" layout="horizontal" />
+              <LumiereLogo size="md" layout="horizontal" className="scale-150 transform-gpu" />
             </button>
 
             {/* Desktop Navigation Links */}
