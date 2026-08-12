@@ -123,7 +123,7 @@ export const DiscoveryKitBuilder: React.FC<DiscoveryKitBuilderProps> = ({
                   >
                     <div className="flex items-center gap-3">
                       <img
-                        src={perfume.image}
+                        src={perfume.image || '/placeholder.svg'}
                         alt={perfume.name}
                         className="w-12 h-14 object-cover rounded-xl border border-white/10"
                       />

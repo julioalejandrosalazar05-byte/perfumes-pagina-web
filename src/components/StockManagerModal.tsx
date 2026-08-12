@@ -332,7 +332,7 @@ export const StockManagerModal: React.FC<StockManagerModalProps> = ({
                   <div key={p.id} className="p-4 flex items-center justify-between gap-4 hover:bg-white/5 transition-colors">
                     <div className="flex items-center gap-3">
                       <img
-                        src={p.image}
+                        src={p.image || '/placeholder.svg'}
                         alt={p.name}
                         className="w-12 h-14 object-cover rounded-xl border border-white/10 bg-black"
                       />

@@ -53,7 +53,7 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
               wishlistPerfumes.map((perfume) => (
                 <div key={perfume.id} className="bg-[#0d0d12] rounded-2xl p-4 border border-white/10 flex gap-4 items-center relative group">
                   <img
-                    src={perfume.image}
+                    src={perfume.image || '/placeholder.svg'}
                     alt={perfume.name}
                     className="w-16 h-20 object-cover rounded-xl border border-white/10 shrink-0 cursor-pointer"
                     onClick={() => {

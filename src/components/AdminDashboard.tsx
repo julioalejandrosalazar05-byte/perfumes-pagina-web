@@ -386,7 +386,7 @@ export function AdminDashboard() {
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div className="flex items-center">
                               <div className="h-10 w-10 flex-shrink-0">
-                                <img className="h-10 w-10 rounded object-cover" src={perfume.image} alt="" />
+                                <img className="h-10 w-10 rounded object-cover" src={perfume.image || '/placeholder.svg'} alt="" />
                               </div>
                               <div className="ml-4">
                                 <div className="text-sm font-medium text-neutral-900">{perfume.name}</div>
@@ -538,7 +538,7 @@ export function AdminDashboard() {
 
                       <div>
                         <label className="block text-sm font-medium text-neutral-700 mb-1">URL de la Imagen (Link)</label>
-                        <input type="url" required value={formData.image} onChange={e => setFormData({...formData, image: e.target.value})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500" placeholder="https://ejemplo.com/foto.jpg" />
+                        <input type="url" value={formData.image} onChange={e => setFormData({...formData, image: e.target.value})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500" placeholder="https://ejemplo.com/foto.jpg" />
                         <p className="text-xs text-neutral-500 mt-1">Busca la foto en Google, haz clic derecho "Copiar dirección de la imagen" y pégala aquí.</p>
                       </div>
 

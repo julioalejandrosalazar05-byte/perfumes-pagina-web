@@ -38,7 +38,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   const [newComment, setNewComment] = useState('');
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
-  const images = [perfume.image, perfume.hoverImage];
+  const images = perfume.image ? [perfume.image, perfume.hoverImage || perfume.image] : ['/placeholder.svg'];
   const currentOption = perfume.sizeOptions[selectedSizeIndex] || perfume.sizeOptions[0];
 
   const handleAddToCart = () => {

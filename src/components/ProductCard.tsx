@@ -43,7 +43,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         
         {/* Main & Hover Image Switch */}
         <img
-          src={isHovered ? perfume.hoverImage : perfume.image}
+          src={(isHovered && perfume.hoverImage) ? perfume.hoverImage : (perfume.image || '/placeholder.svg')}
           alt={perfume.name}
           className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100"
           loading="lazy"

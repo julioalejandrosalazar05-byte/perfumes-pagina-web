@@ -114,7 +114,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               cartItems.map((item) => (
                 <div key={item.id} className="bg-[#0d0d12] rounded-2xl p-4 border border-white/10 flex gap-4 items-center relative group">
                   <img
-                    src={item.perfume.image}
+                    src={item.perfume.image || '/placeholder.svg'}
                     alt={item.perfume.name}
                     className="w-16 h-20 object-cover rounded-xl border border-white/10 shrink-0"
                   />
