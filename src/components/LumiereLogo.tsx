@@ -15,10 +15,10 @@ export const LumiereLogo: React.FC<LumiereLogoProps> = ({
 }) => {
   // Dimension mappings for logo image height
   const sizeMap = {
-    sm: { height: '45px' },
-    md: { height: '80px' },
-    lg: { height: '120px' },
-    xl: { height: '180px' },
+    sm: { height: '35px' },
+    md: { height: '65px' },
+    lg: { height: '90px' },
+    xl: { height: '140px' },
   };
 
   const currentSize = sizeMap[size] || sizeMap.md;
