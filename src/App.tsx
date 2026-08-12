@@ -83,7 +83,7 @@ export default function App() {
         const applyExchangeRate = (perfumeList: Perfume[]) => {
           return perfumeList.map(p => {
             // Filtrar globalmente para que solo exista la opción de 100ml
-            let validSizes = p.sizeOptions.filter(opt => opt.size === '100ml');
+            let validSizes = p.sizeOptions.filter(opt => opt.label === '100ml' || opt.ml === 100);
             if (validSizes.length === 0) validSizes = p.sizeOptions; // fallback de seguridad
 
             return {
