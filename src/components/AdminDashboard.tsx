@@ -51,8 +51,11 @@ export function AdminDashboard() {
   };
 
   const handleDelete = async (id: string) => {
-    if (window.confirm('¿Estás seguro de eliminar este perfume?')) {
-      await deletePerfumeFromFirestore(id);
+    // Usamos alert normal por si window.confirm está bloqueado, pero primero intentamos borrar directo
+    const success = await deletePerfumeFromFirestore(id);
+    if (!success) {
+      alert("Error: No se pudo eliminar. Tu base de datos Firebase tiene las reglas de seguridad vencidas o bloqueadas. Ve a la pestaña 'Seguridad' en Firebase y cambia la regla a 'allow read, write: if true;'.");
+    } else {
       loadData();
     }
   };
@@ -122,21 +125,26 @@ export function AdminDashboard() {
       stock: 10,
     };
 
-    if (editingPerfume) {
-      // Retain complex fields if editing
-      await updatePerfumeInFirestore(editingPerfume.id, {
-        ...perfumeToSave,
-        notes: editingPerfume.notes,
-        longevityScore: editingPerfume.longevityScore,
-        projectionScore: editingPerfume.projectionScore,
-        seasons: editingPerfume.seasons,
-        occasions: editingPerfume.occasions,
-        rating: editingPerfume.rating,
-        reviewCount: editingPerfume.reviewCount,
-        stock: editingPerfume.stock
-      });
-    } else {
-      await addPerfumeToFirestore(perfumeToSave);
+    try {
+      if (editingPerfume) {
+        const success = await updatePerfumeInFirestore(editingPerfume.id, {
+          ...perfumeToSave,
+          notes: editingPerfume.notes,
+          longevityScore: editingPerfume.longevityScore,
+          projectionScore: editingPerfume.projectionScore,
+          seasons: editingPerfume.seasons,
+          occasions: editingPerfume.occasions,
+          rating: editingPerfume.rating,
+          reviewCount: editingPerfume.reviewCount,
+          stock: editingPerfume.stock
+        });
+        if (!success) alert("Error: Firebase bloqueó la actualización. Ve a la pestaña 'Seguridad' en Firebase y cambia la regla a 'allow read, write: if true;'.");
+      } else {
+        const newId = await addPerfumeToFirestore(perfumeToSave);
+        if (!newId) alert("Error: Firebase bloqueó la creación. Ve a la pestaña 'Seguridad' en Firebase y cambia la regla a 'allow read, write: if true;'.");
+      }
+    } catch (err) {
+      alert("Error inesperado al guardar en Firebase.");
     }
 
     setIsModalOpen(false);
