@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Perfume } from '../types';
 import { signOut } from 'firebase/auth';
-import { auth, getPerfumesFromFirestore, deletePerfumeFromFirestore, getSalesFromFirestore, addPerfumeToFirestore, updatePerfumeInFirestore } from '../lib/firebase';
+import { auth, getPerfumesFromFirestore, deletePerfumeFromFirestore, 
+getSalesFromFirestore, addPerfumeToFirestore, updatePerfumeInFirestore,
+getExchangeRateFromFirestore, saveExchangeRateToFirestore } from '../lib/firebase';
 import { LogOut, Package, ShoppingBag, Plus, Edit2, Trash2, TrendingUp, Users, DollarSign, Activity, X } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
@@ -34,6 +36,9 @@ export function AdminDashboard() {
     loadData();
   }, [activeTab]);
 
+  const [bcvRate, setBcvRate] = useState<number>(766.86);
+  const [isSavingRate, setIsSavingRate] = useState(false);
+
   const loadData = async () => {
     setLoading(true);
     if (activeTab === 'products') {
@@ -42,6 +47,8 @@ export function AdminDashboard() {
     } else if (activeTab === 'sales' || activeTab === 'dashboard') {
       const data = await getSalesFromFirestore();
       setSales(data);
+      const rate = await getExchangeRateFromFirestore();
+      if (rate) setBcvRate(rate);
     }
     setLoading(false);
   };
@@ -58,6 +65,17 @@ export function AdminDashboard() {
     } else {
       loadData();
     }
+  };
+
+  const handleSaveRate = async () => {
+    setIsSavingRate(true);
+    const success = await saveExchangeRateToFirestore(bcvRate);
+    if (success) {
+      alert("Tasa actualizada correctamente. Recarga la página principal para ver los cambios.");
+    } else {
+      alert("Error al actualizar la tasa. Revisa tus reglas de seguridad en Firebase.");
+    }
+    setIsSavingRate(false);
   };
 
   const openNewPerfumeModal = () => {
@@ -246,7 +264,26 @@ export function AdminDashboard() {
           <>
             {activeTab === 'dashboard' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-neutral-800">Resumen Ejecutivo</h2>
+                <div className="flex justify-between items-center">
+                  <h2 className="text-2xl font-bold text-neutral-800">Resumen Ejecutivo</h2>
+                  <div className="bg-amber-50 p-3 rounded-lg border border-amber-200 flex items-center space-x-3">
+                    <span className="text-amber-800 font-medium text-sm">Tasa BCV:</span>
+                    <input 
+                      type="number" 
+                      value={bcvRate} 
+                      onChange={(e) => setBcvRate(Number(e.target.value))}
+                      className="w-24 px-2 py-1 border border-amber-300 rounded text-sm text-right focus:outline-none focus:ring-1 focus:ring-amber-500"
+                    />
+                    <span className="text-amber-800 text-sm font-bold">Bs/$</span>
+                    <button 
+                      onClick={handleSaveRate}
+                      disabled={isSavingRate}
+                      className="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white rounded text-sm transition-colors disabled:opacity-50"
+                    >
+                      {isSavingRate ? '...' : 'Guardar'}
+                    </button>
+                  </div>
+                </div>
                 
                 {/* KPI Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -536,10 +573,9 @@ export function AdminDashboard() {
                           </div>
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-neutral-700 mb-1">Tamaño</label>
+                          <label className="block text-sm font-medium text-neutral-700 mb-1">Tamaño (Único)</label>
                           <select value={formData.size} onChange={e => setFormData({...formData, size: e.target.value})} className="w-full border border-neutral-300 rounded p-2 focus:ring-amber-500 focus:border-amber-500">
                             <option value="100ml">100ml</option>
-                            <option value="50ml">50ml</option>
                           </select>
                         </div>
                       </div>

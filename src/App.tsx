@@ -19,6 +19,7 @@ import {
   getPerfumesFromFirestore,
   savePerfumesToFirestore,
   recordSaleInFirestore,
+  getExchangeRateFromFirestore,
   auth
 } from './lib/firebase';
 import { AdminLogin } from './components/AdminLogin';
@@ -66,31 +67,34 @@ export default function App() {
       await testFirestoreConnection();
 
       try {
-        // Obtener tasa de cambio del BCV
-        let currentRate = 50; // Fallback
-        try {
-          const rateRes = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
-          const rateData = await rateRes.json();
-          if (rateData && rateData.promedio) {
-            currentRate = rateData.promedio;
-            setExchangeRate(currentRate);
-          }
-        } catch (e) {
-          console.warn('Error obteniendo tasa BCV, usando fallback:', e);
+        // Obtener tasa de cambio desde Firebase (configurado por el Admin)
+        let currentRate = 766.86; // Fallback
+        
+        const firebaseRate = await getExchangeRateFromFirestore();
+        if (firebaseRate && firebaseRate > 0) {
+          currentRate = firebaseRate;
         }
+        
+        setExchangeRate(currentRate);
 
         const firestorePerfumes = await getPerfumesFromFirestore();
         
-        // Función para aplicar la tasa de cambio a los precios
+        // Función para aplicar la tasa de cambio y limpiar opciones de 50ml
         const applyExchangeRate = (perfumeList: Perfume[]) => {
-          return perfumeList.map(p => ({
-            ...p,
-            priceBs: parseFloat((p.price * currentRate).toFixed(2)),
-            sizeOptions: p.sizeOptions.map(opt => ({
-              ...opt,
-              priceBs: parseFloat((opt.price * currentRate).toFixed(2))
-            }))
-          }));
+          return perfumeList.map(p => {
+            // Filtrar globalmente para que solo exista la opción de 100ml
+            let validSizes = p.sizeOptions.filter(opt => opt.size === '100ml');
+            if (validSizes.length === 0) validSizes = p.sizeOptions; // fallback de seguridad
+
+            return {
+              ...p,
+              priceBs: parseFloat((p.price * currentRate).toFixed(2)),
+              sizeOptions: validSizes.map(opt => ({
+                ...opt,
+                priceBs: parseFloat((opt.price * currentRate).toFixed(2))
+              }))
+            };
+          });
         };
 
         const isUpdated = false; // Forzar actualización de precios en Firebase

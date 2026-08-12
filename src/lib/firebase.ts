@@ -180,3 +180,30 @@ export async function getSalesFromFirestore(): Promise<any[]> {
     return [];
   }
 }
+
+// Global Store Settings (Exchange Rate)
+export async function getExchangeRateFromFirestore(): Promise<number | null> {
+  try {
+    const docRef = doc(db, 'settings', 'store');
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      return data.bcvRate || null;
+    }
+    return null;
+  } catch (error) {
+    console.error('Error fetching exchange rate from Firestore:', error);
+    return null;
+  }
+}
+
+export async function saveExchangeRateToFirestore(rate: number): Promise<boolean> {
+  try {
+    const docRef = doc(db, 'settings', 'store');
+    await setDoc(docRef, { bcvRate: rate }, { merge: true });
+    return true;
+  } catch (error) {
+    console.error('Error saving exchange rate to Firestore:', error);
+    return false;
+  }
+}
